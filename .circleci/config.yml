@@ -1,7 +1,7 @@
 version: 2
 jobs:
   one:
-    docker: # See https://docs.docker.com/get-started/#docker-concepts if you are new to Docker.
+    docker:
       - image: circleci/ruby:2.4.1-jessie
     steps:
       - checkout
@@ -19,7 +19,7 @@ jobs:
       - image: circleci/ruby:2.4.1-jessie
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: echo "A more familiar hi"  
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: my_workspace
@@ -29,7 +29,7 @@ jobs:
             echo "It worked!";
           else
             echo "Nope!"; exit 1
-          fi      
+          fi
 workflows:
   version: 2
   one_and_two:
